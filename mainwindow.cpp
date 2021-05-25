@@ -8,7 +8,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QDebug>
-
+#include <QNetworkAccessManager>
 const QString url = "https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=%1&client_secret=%2";
 const QString client_id = "lb6NRnyge1I23EgRSfLwa5mW";     /**< 百度云API Key*/
 const QString secret = "E9jYERAieNhsF8lFPjGB3co4ZzKFRytn";/**< 百度云Secret Key*/
@@ -33,6 +33,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     /*连接菜单打开文件信号*/
     connect(ui->actionopen ,&QAction::triggered ,this ,&MainWindow::slotOpenFile);
+
+    qDebug()<< "输出当前QT支持的openSSL版本:" << QSslSocket::sslLibraryBuildVersionString();
+
+    qDebug() << "OpenSSL支持情况:" << QSslSocket::supportsSsl();
 }
 
 /**
