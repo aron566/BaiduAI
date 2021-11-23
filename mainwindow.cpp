@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     qDebug()<< "输出当前QT支持的openSSL版本:" << QSslSocket::sslLibraryBuildVersionString();
 
     qDebug() << "OpenSSL支持情况:" << QSslSocket::supportsSsl();
+
+    qDebug() << "OpenSSL运行时SSL库版本:" << QSslSocket::sslLibraryVersionString();
 }
 
 /**
